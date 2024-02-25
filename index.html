@@ -36,7 +36,7 @@
         const expiration = tokenData.exp * 1000;
         const currentTimestamp = Date.now();
         localStorage.clear();
-        if (currentTimestamp < expiration) {
+        if (currentTimestamp > expiration) {
             history.pushState(null, null, '/');
             window.location.reload();
         }
